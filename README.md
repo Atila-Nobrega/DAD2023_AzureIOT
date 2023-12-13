@@ -45,11 +45,13 @@ Dessa maneira será feita uma Coleta e envio de dados de sensores, envio desses 
 
 ![1](https://github.com/Atila-Nobrega/DAD2023_AzureIOT/assets/49105715/d5f6149f-11d3-4b27-b997-5cfc4b4b7cca)
 
+!!! Não Implementamos os envios de comandos para os dispositivos, porém esta implementação seguiria a mesma lógica de envio de dados.
+
 ## Fluxo dos Sensores:
 
 ![2](https://github.com/Atila-Nobrega/DAD2023_AzureIOT/assets/49105715/ec6498a4-3f78-4ee2-903d-d31c6432b652)
 
-## Fluxo Sensores + IoT (Como funciona o protocolo publish/Subscriber):
+## Fluxo Sensores + IoT + Backend (publish/Subscriber):
 
 ![6](https://github.com/Atila-Nobrega/DAD2023_AzureIOT/assets/49105715/f7515338-1d4d-43e1-ae81-cd50ef89ac45)
 
