@@ -1,4 +1,0 @@
-azure-iot-device
-azure-iot-hub
-databases
-asyncpg
