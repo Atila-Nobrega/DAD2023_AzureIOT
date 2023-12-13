@@ -5,7 +5,7 @@ O IoT Hub funciona como um hub de mensagens bidirecional, permitindo a comunica�
 
 ## Principais Recusos
 1. Registro e Autenticação de Dispositivos: O serviço fornece um sistema seguro para registrar e autenticar dispositivos, garantindo que apenas dispositivos autorizados possam interagir com o IoT Hub. Essa autorização é feita por meio de Keys e será utilizado no projeto.
-2. Comunicação Bidirecional: Permite a transmissão eficiente de mensagens entre dispositivos IoT e aplicativos na nuvem, possibilitando ações remotas e atualizações em tempo real. No exemplo do projeto, veremos como enviar uam mensagem por meio de um processo para a núvem e em seguida direcionar essa mensagem para outro sistema, que possui um banco MongoDB NoSQL, assim salvando so resultados em tempo real.
+2. Comunicação Bidirecional: Permite a transmissão eficiente de mensagens entre dispositivos IoT e aplicativos na nuvem, possibilitando ações remotas e atualizações em tempo real. No exemplo do projeto, veremos como enviar uam mensagem por meio de um processo para a núvem e em seguida direcionar essa mensagem para outro sistema, que possui um banco PostgresSQL, assim salvando so resultados em tempo real.
 4. Escalabilidade Automática: O IoT Hub escala automaticamente para lidar com grandes volumes de dispositivos, garantindo desempenho consistente mesmo em ambientes dinâmicos.
 
 ## Casos de uso:
@@ -34,3 +34,36 @@ O projeto propõe a implementação dos seguintes serviços:
 
 Dessa maneira será feita uma Coleta e envio de dados de sensores, envio desses dados para o serviço na núvem e encaminhamento dessas informações para um banco de dados SQL, quem em seguida poderia ser conectado a uma tecnologia de analiticas de dados para monitoramento.
 
+## Materias utilizados para o dispositivo:
++ Sensor De Qualidade Do Ar Mq-135
++ Sensor Dht11 Sensor De Temperatura E Umidade
++ Buzina Buzzer Ativo 5v
++ Arduino
++ Cabo USB interface para o computador (Necessário somente pois o arduino não possui modulo WIFI)
+
+## Fluxo Geral:
+
+![1](https://github.com/Atila-Nobrega/DAD2023_AzureIOT/assets/49105715/d5f6149f-11d3-4b27-b997-5cfc4b4b7cca)
+
+## Fluxo dos Sensores:
+
+![2](https://github.com/Atila-Nobrega/DAD2023_AzureIOT/assets/49105715/ec6498a4-3f78-4ee2-903d-d31c6432b652)
+
+## Fluxo Sensores + IoT (Como funciona o protocolo publish/Subscriber):
+
+![6](https://github.com/Atila-Nobrega/DAD2023_AzureIOT/assets/49105715/f7515338-1d4d-43e1-ae81-cd50ef89ac45)
+
+
+## Resultados:
+Segue algumas imagens demonstrando o funcioanmento:
++ Os dados são enviados por meio do protocolo MQTT para o Azure IoT hub. Aqui é o resultado de um encaminhamento da mensagem de um processo a outro por meio do IoT Hub, onde o processo a esquerda exemplifica o envio para a Nuvem e o o processo a direita mostra o retorno da mensagem. 
+
+![13](https://github.com/Atila-Nobrega/DAD2023_AzureIOT/assets/49105715/054d66d3-75d0-471e-a579-2108b008641a)
+
++ O Azure IoT hub permite a criação de dashboards para apresentação dos dados recebidos pelos dispositivos conectados:
+  
+![12](https://github.com/Atila-Nobrega/DAD2023_AzureIOT/assets/49105715/39012edf-b8d8-44d9-adfc-d73dc04a8df5)
+
++ Contudo, é de interesse elaborar uma aplicação para apresentar os dados ao usuário, foi criado, com o uso da Ferramenta de BI open source Metabase, um conjunto de gráficos integrados a um banco de dados local do PostgreSQL. Assim, podemos enviar os dados do dispositivo para a nuvem e receber em outro computador, onde os dados serão recebidos e estarão prontos para serem visualizados no dashboard do metabase.
+
+![11](https://github.com/Atila-Nobrega/DAD2023_AzureIOT/assets/49105715/819fbdce-8697-4eb8-b6b1-39ee79fb8877)
