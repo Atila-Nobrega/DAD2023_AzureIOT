@@ -1,0 +1,32 @@
+######### INSTRUÇÕES IOT HUB RASPBERRY PI ################
+Passos para rodar a nossa aplicação:
+
+- Instalar no terminal os pacotes do SDK IoT Hub para python:
+
+pip install -r requirements.txt
+
+- Substituir no SendD2CMessage.py o serial correto do IoT Hub, e o Id do dispositivo para qual as mensagens serão encaminhadas:
+
+CONNECTION_STRING = (Conection string do IoT Hub)
+DEVICE_ID = (Id do dispoisitivo criado)
+
+- Conectar o Raspberry a rede WIFI
+
+- Inserir o SendD2CMessage.py como Script de Boot, feito isso o dispositivo está pronto para uso!
+
+######### INSTRUÇÕES BACKEND ################
+
+- Substituir no Backend.py o serial correto do dispostivo criado, representação por imagem nos slides: (Por padrão eu deixei os meus códigos)
+
+CONNECTION_STRING = (Conection string do dispositivo criado no IoT Hub)
+
+- Acrescentar a credênciais do PostgreSQL no /utils/const.py
+
+- Iniciar o Backend para receber as mensagens:
+
+python Backend.py
+
+- Iniciar o Metabase seguindo as instruções presentes em metabase/_.txt:
+
+
+######### FIM ############
